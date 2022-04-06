@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "styled-components";
 
-function App() {
+// -------- Styles
+import { GlobalStyles } from "./styles/GlobalStyle";
+import { lightTheme, darkTheme } from "./styles/theme";
+
+// -------- Components
+import { useDarkMode } from "./components/ToggleTheme/useDarkTheme.hooks";
+import ToggleTheme from "./components/ToggleTheme/ToggleTheme";
+import Header from "./components/Header/Header";
+import { Route, Routes } from "react-router-dom";
+
+// -------- Pages
+import HomePage from "./pages/HomePage/HomePage";
+
+const App = () => {
+  const [theme, themeToggler] = useDarkMode();
+  const themeMode = theme === "light" ? lightTheme : darkTheme;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={themeMode}>
+      <GlobalStyles />
+      <ToggleTheme theme={theme} themeToggler={themeToggler} />
+
+      <Header />
+
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+      </Routes>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
