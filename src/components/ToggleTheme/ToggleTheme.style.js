@@ -13,6 +13,7 @@ export const ToggleThemeContainer = styled.div`
   background-color: ${({ theme }) => theme.background};
   border: 2px solid ${({ theme }) => theme.toggleBorder};
   cursor: pointer;
+  z-index: 999;
 
   & svg {
     stroke: ${({ theme }) => theme.icon};

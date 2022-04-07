@@ -5,6 +5,7 @@ export const lightTheme = {
   background: "#121212",
   icon: "#fff",
   gray: "rgba(0,0,0,.7)",
+  lightGray: "rgba(0,0,0,.5)",
 };
 
 export const darkTheme = {
@@ -14,4 +15,5 @@ export const darkTheme = {
   background: "#fff",
   icon: "#000",
   gray: "#fff",
+  lightGray: "rgba(0,0,0,.5)",
 };
