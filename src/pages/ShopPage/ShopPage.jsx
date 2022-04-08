@@ -26,7 +26,7 @@ const ShopPage = () => {
 
   useEffect(() => {
     allProductsAndCategories();
-  }, [products, collections]);
+  }, []);
 
   return (
     <ShopPageWrapper>
@@ -36,8 +36,7 @@ const ShopPage = () => {
             <Title>{collection.name}</Title>
             <ShopPageCollection>
               {products[collection.name].items.slice(0, 4).map((product) => {
-                const { id, imageUrl, productName, price, isFavorite } =
-                  product;
+                const { id, imageUrl, productName, price } = product;
 
                 return (
                   <ProductCard
@@ -46,7 +45,6 @@ const ShopPage = () => {
                     imageUrl={imageUrl}
                     productName={productName}
                     price={price}
-                    isFavorite={isFavorite}
                   />
                 );
               })}

@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import ProductCard from "../../components/ProductCard/ProductCard";
 
 // ------- Styles
 import {
@@ -10,7 +11,7 @@ import {
 } from "./Favorite.style";
 
 const FavoritePage = () => {
-  const favorites = useSelector((state) => state.favorites.favorites);
+  const favorites = useSelector((state) => state.favorites);
 
   return (
     <FavoriteWrapper>
@@ -21,7 +22,20 @@ const FavoritePage = () => {
         </FavoriteMsg>
       ) : (
         <FavoriteContainer>
-          <p>There is products</p>
+          {favorites.map((favorite) => {
+            const { id, imageUrl, productName, price, isFavorite } = favorite;
+
+            return (
+              <ProductCard
+                key={productName}
+                id={id}
+                imageUrl={imageUrl}
+                productName={productName}
+                price={price}
+                isFavorite={isFavorite}
+              />
+            );
+          })}
         </FavoriteContainer>
       )}
     </FavoriteWrapper>

@@ -11,12 +11,8 @@ export const ProductCardContainer = styled.div`
   width: 100%;
 
   &:hover {
-    & svg {
+    & div {
       display: block;
-
-      &:hover {
-        opacity: 1;
-      }
     }
 
     & button {
@@ -24,23 +20,32 @@ export const ProductCardContainer = styled.div`
     }
   }
 
-  & svg {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    width: 30px;
-    height: 30px;
-    fill: white;
-    opacity: 0.7;
-    display: none;
-    transform: all 0.2s;
-  }
-
   & button {
     position: absolute;
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
+  }
+`;
+
+export const Icon = styled.div`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: none;
+  cursor: pointer;
+  opacity: 0.7;
+  color: #fff;
+  font-size: 25px;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  & svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
   }
 `;
 

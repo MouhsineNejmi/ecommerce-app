@@ -21,4 +21,9 @@ export const FavoriteMsg = styled.div`
   }
 `;
 
-export const FavoriteContainer = styled.div``;
+export const FavoriteContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 350px;
+  gap: 15px;
+`;

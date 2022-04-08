@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 // ------- Data
@@ -17,10 +18,11 @@ import {
   HeaderNavigationIcon,
 } from "./Header.style";
 
+// ------- Redux
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const favoritesCount = useSelector((state) => state.favorites.count);
+  const favorites = useSelector((state) => state.favorites);
 
   return (
     <HeaderContainer>
@@ -44,7 +46,7 @@ const Header = () => {
         <HeaderNavigationIcons>
           <HeaderNavigationIcon to='/favorites'>
             <HeartIcon />
-            <span>{favoritesCount}</span>
+            <span>{favorites.length}</span>
           </HeaderNavigationIcon>
 
           <HeaderNavigationIcon to='#'>
