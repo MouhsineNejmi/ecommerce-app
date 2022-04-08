@@ -13,6 +13,7 @@ export const CollectionsWrapper = styled.section`
 export const CollectionWrapper = styled.div`
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
 `;
 
 export const CollectionBackground = styled.div`
@@ -23,7 +24,6 @@ export const CollectionBackground = styled.div`
   background-size: cover;
   cursor: pointer;
   filter: saturate(120%);
-  z-index: 999;
 
   &:hover {
     transform: scale(1.1);
@@ -43,6 +43,11 @@ export const CollectionInfo = styled.div`
   padding: 15px 30px 20px;
   z-index: 1;
   cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
 
   & h3,
   & h4 {

@@ -6,6 +6,7 @@ export const lightTheme = {
   icon: "#fff",
   gray: "rgba(0,0,0,.7)",
   lightGray: "rgba(0,0,0,.5)",
+  title: "#3a3a3a",
 };
 
 export const darkTheme = {
@@ -16,4 +17,5 @@ export const darkTheme = {
   icon: "#000",
   gray: "#fff",
   lightGray: "rgba(0,0,0,.5)",
+  title: "#fff",
 };
