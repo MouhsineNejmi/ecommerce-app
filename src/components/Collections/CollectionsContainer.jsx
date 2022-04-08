@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// -------- Data
-import { collections } from "../../data/collections";
+
+// -------- Redux
+import { useSelector, useDispatch } from "react-redux";
+import { getCollections } from "../../app/features/collections/collectionsSlice";
 
 // -------- Components
 import CollectionsView from "./CollectionsView";
@@ -9,25 +11,23 @@ import CollectionsView from "./CollectionsView";
 // -------- Styles
 import { CollectionsWrapper } from "./Collections.style";
 
-const fetchCollections = () => {
-  return collections;
-};
-
 const CollectionsContainer = () => {
   let navigate = useNavigate();
-  const [_collections, _setCollections] = useState([]);
+  const collections = useSelector((state) => state.collections);
+  const dispatch = useDispatch();
+
+  const fetchCollections = () => dispatch(getCollections());
 
   useEffect(() => {
-    const getCollections = fetchCollections();
-    _setCollections(getCollections);
+    fetchCollections();
   }, []);
 
   const pushRoute = (name) => navigate(`/shop/${name}`);
 
   return (
     <CollectionsWrapper>
-      {_collections &&
-        _collections.map((collection) => (
+      {collections &&
+        collections.map((collection) => (
           <CollectionsView
             key={collection.id}
             collection={collection}

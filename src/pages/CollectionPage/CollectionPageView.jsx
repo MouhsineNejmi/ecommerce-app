@@ -4,11 +4,11 @@ import CollectionProducts from "../../components/CollectionProducts/CollectionPr
 // -------- Styles
 import { CollectionWrapper, Title } from "./CollectionPage.style";
 
-const CollectionPageView = ({ collectionName, products }) => {
+const CollectionPageView = ({ collectionName }) => {
   return (
     <CollectionWrapper>
       <Title>{collectionName}</Title>
-      <CollectionProducts products={products} />
+      <CollectionProducts collectionName={collectionName} />
     </CollectionWrapper>
   );
 };
