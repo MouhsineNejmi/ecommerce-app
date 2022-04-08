@@ -19,23 +19,24 @@ const ShopPage = () => {
   const collections = useSelector((state) => state.collections);
   const dispatch = useDispatch();
 
-  const allProductsAndCategories = () => {
+  useEffect(() => {
     dispatch(getProducts());
     dispatch(getCollections());
-  };
-
-  useEffect(() => {
-    allProductsAndCategories();
   }, []);
 
   return (
     <ShopPageWrapper>
       {collections.map((collection) => {
+        const limitedCollectionProducts = products[collection.name].items.slice(
+          0,
+          4,
+        );
+
         return (
           <Fragment key={collection.id}>
             <Title>{collection.name}</Title>
             <ShopPageCollection>
-              {products[collection.name].items.slice(0, 4).map((product) => {
+              {limitedCollectionProducts.map((product) => {
                 const { id, imageUrl, productName, price } = product;
 
                 return (

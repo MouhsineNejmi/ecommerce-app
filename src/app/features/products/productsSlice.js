@@ -16,6 +16,7 @@ export const productsSlice = createSlice({
   },
 });
 
-export const { getProducts, getProductsByCollection } = productsSlice.actions;
+export const { getProducts, getProductsByCollection, getProductsShopPage } =
+  productsSlice.actions;
 
 export default productsSlice.reducer;
