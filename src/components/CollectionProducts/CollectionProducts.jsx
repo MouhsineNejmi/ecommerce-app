@@ -6,13 +6,14 @@ import { CollectionProductsWrapper } from "./CollectionProducts.style";
 import ProductCard from "../ProductCard/ProductCard";
 // ------- Redux
 import { useSelector, useDispatch } from "react-redux";
-import { getProducts } from "../../app/features/products/productsSlice";
+import { getProductsByCollection } from "../../app/features/products/productsSlice";
 
 const CollectionProducts = ({ collectionName }) => {
   const dispatch = useDispatch();
   const collectionProducts = useSelector((state) => state.products);
 
-  const getCollectionProducts = (name) => dispatch(getProducts(name));
+  const getCollectionProducts = (name) =>
+    dispatch(getProductsByCollection(name));
   const collectionProductsItems = collectionProducts?.items;
 
   useEffect(() => {
@@ -23,14 +24,17 @@ const CollectionProducts = ({ collectionName }) => {
     <CollectionProductsWrapper>
       {collectionProductsItems ? (
         collectionProductsItems.map((collectionProduct) => {
-          const { id, imageUrl, productName, price } = collectionProduct;
+          const { id, imageUrl, productName, price, isFavorite } =
+            collectionProduct;
 
           return (
             <ProductCard
               key={id}
+              id={id}
               imageUrl={imageUrl}
               productName={productName}
               price={price}
+              isFavorite={isFavorite}
             />
           );
         })

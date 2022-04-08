@@ -12,12 +12,12 @@ import {
   ProductCardInfo,
 } from "./ProductCard.styles";
 
-const ProductCard = ({ imageUrl, productName, price }) => {
+const ProductCard = ({ id, imageUrl, productName, price, isFavorite }) => {
   return (
     <ProductCardWrapper>
       <ProductCardContainer>
         <ProductCardImage src={imageUrl} alt={productName} />
-        <FavoritesIcon />
+        <FavoritesIcon isFavorite={isFavorite} />
         <AddToCartButton />
       </ProductCardContainer>
       <ProductCardInfo>

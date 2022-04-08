@@ -7,12 +7,15 @@ export const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    getProducts: (state, action) => {
+    getProducts: (state) => {
+      return products;
+    },
+    getProductsByCollection: (state, action) => {
       return products[action.payload];
     },
   },
 });
 
-export const { getProducts } = productsSlice.actions;
+export const { getProducts, getProductsByCollection } = productsSlice.actions;
 
 export default productsSlice.reducer;

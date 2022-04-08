@@ -14,6 +14,7 @@ import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import ShopPage from "./pages/ShopPage/ShopPage";
 import CollectionPageContainer from "./pages/CollectionPage/CollectionPageContainer";
+import FavoritePage from "./pages/Favorite/FavoritePage";
 
 const App = () => {
   const [theme, themeToggler] = useDarkMode();
@@ -33,6 +34,7 @@ const App = () => {
           path='/shop/:shopCollection'
           element={<CollectionPageContainer />}
         />
+        <Route path='/favorites' element={<FavoritePage />} />
       </Routes>
 
       <Outlet />
