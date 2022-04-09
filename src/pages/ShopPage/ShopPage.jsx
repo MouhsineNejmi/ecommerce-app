@@ -22,7 +22,7 @@ const ShopPage = () => {
   useEffect(() => {
     dispatch(getProducts());
     dispatch(getCollections());
-  }, []);
+  }, [dispatch]);
 
   return (
     <ShopPageWrapper>

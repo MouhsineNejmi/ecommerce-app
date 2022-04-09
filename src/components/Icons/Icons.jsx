@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 export const HeartIcon = () => {
   return (
     <svg id='Capa_1' x='0px' y='0px' viewBox='0 0 412.735 412.735'>

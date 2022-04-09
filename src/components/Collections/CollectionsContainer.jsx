@@ -16,11 +16,9 @@ const CollectionsContainer = () => {
   const collections = useSelector((state) => state.collections);
   const dispatch = useDispatch();
 
-  const fetchCollections = () => dispatch(getCollections());
-
   useEffect(() => {
-    fetchCollections();
-  }, []);
+    dispatch(getCollections());
+  }, [dispatch]);
 
   const pushRoute = (name) => navigate(`/shop/${name}`);
 

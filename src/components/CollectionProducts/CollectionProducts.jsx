@@ -11,14 +11,11 @@ import { getProductsByCollection } from "../../app/features/products/productsSli
 const CollectionProducts = ({ collectionName }) => {
   const dispatch = useDispatch();
   const collectionProducts = useSelector((state) => state.products);
-
-  const getCollectionProducts = (name) =>
-    dispatch(getProductsByCollection(name));
   const collectionProductsItems = collectionProducts?.items;
 
   useEffect(() => {
-    getCollectionProducts(collectionName);
-  }, []);
+    dispatch(getProductsByCollection(collectionName));
+  }, [dispatch, collectionName]);
 
   return (
     <CollectionProductsWrapper>
