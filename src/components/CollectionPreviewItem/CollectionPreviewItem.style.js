@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const ProductCardWrapper = styled.div`
+export const CollectionPreviewItemWrapper = styled.div`
   position: relative;
   margin-bottom: 30px;
   height: 350px;
 `;
 
-export const ProductCardContainer = styled.div`
+export const CollectionPreviewItemContainer = styled.div`
   height: 95%;
   width: 100%;
 
@@ -49,7 +49,7 @@ export const Icon = styled.div`
   }
 `;
 
-export const ProductCardImage = styled.img`
+export const CollectionPreviewItemImage = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -57,7 +57,7 @@ export const ProductCardImage = styled.img`
   background-repeat: no-repeat;
 `;
 
-export const ProductCardInfo = styled.div`
+export const CollectionPreviewItemInfo = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 5px;

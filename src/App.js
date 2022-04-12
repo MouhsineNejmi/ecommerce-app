@@ -13,7 +13,7 @@ import Header from "./components/Header/Header";
 // -------- Pages
 import HomePage from "./pages/HomePage/HomePage";
 import ShopPage from "./pages/ShopPage/ShopPage";
-import CollectionPageContainer from "./pages/CollectionPage/CollectionPageContainer";
+import CollectionPage from "./pages/CollectionPage/CollectionPage";
 import FavoritePage from "./pages/Favorite/FavoritePage";
 
 const App = () => {
@@ -30,10 +30,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='shop' element={<ShopPage />} />
-        <Route
-          path='/shop/:shopCollection'
-          element={<CollectionPageContainer />}
-        />
+        <Route path='/shop/:shopCollection' element={<CollectionPage />} />
         <Route path='/favorites' element={<FavoritePage />} />
       </Routes>
 

@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import ProductCard from "../../components/ProductCard/ProductCard";
+
+// ------- Components
+import CollectionPreviewItem from "../../components/CollectionPreviewItem/CollectionPreviewItem";
 
 // ------- Styles
 import {
@@ -22,20 +24,9 @@ const FavoritePage = () => {
         </FavoriteMsg>
       ) : (
         <FavoriteContainer>
-          {favorites.map((favorite) => {
-            const { id, imageUrl, productName, price, isFavorite } = favorite;
-
-            return (
-              <ProductCard
-                key={id}
-                id={id}
-                imageUrl={imageUrl}
-                productName={productName}
-                price={price}
-                isFavorite={isFavorite}
-              />
-            );
-          })}
+          {favorites.map((favorite) => (
+            <CollectionPreviewItem key={favorite.id} item={favorite} />
+          ))}
         </FavoriteContainer>
       )}
     </FavoriteWrapper>

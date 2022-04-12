@@ -24,10 +24,3 @@ export const ShopPageCollection = styled.div`
     grid-template-columns: 1fr;
   }
 `;
-
-export const Title = styled.h2`
-  font-size: 30px;
-  letter-spacing: 1.5px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-`;

@@ -7,7 +7,6 @@ export const CollectionsWrapper = styled.section`
   grid-gap: 15px;
   margin-bottom: 30px;
   overflow: hidden;
-
   @media screen and (max-width: 1024px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 240px);
@@ -29,7 +28,6 @@ export const CollectionBackground = styled.div`
   background-size: cover;
   cursor: pointer;
   filter: saturate(120%);
-
   &:hover {
     transform: scale(1.1);
     transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95) 0s;
@@ -49,26 +47,21 @@ export const CollectionInfo = styled.div`
   z-index: 1;
   cursor: pointer;
   transition: all 0.3s;
-
   @media screen and (max-width: 520px) {
     width: 60%;
   }
-
   &:hover {
     background-color: rgba(255, 255, 255, 0.9);
   }
-
   & h3,
   & h4 {
     text-transform: uppercase;
     padding-bottom: 15px;
     font-weight: 700;
   }
-
   & h3 {
     font-size: 18px;
   }
-
   & h4 {
     font-size: 13px;
   }

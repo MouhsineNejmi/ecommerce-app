@@ -6,12 +6,12 @@ import { AddToCartButton } from "../Buttons/Buttons";
 
 // ------- Styles
 import {
-  ProductCardWrapper,
-  ProductCardContainer,
-  ProductCardImage,
-  ProductCardInfo,
+  CollectionPreviewItemWrapper,
+  CollectionPreviewItemContainer,
   Icon,
-} from "./ProductCard.styles";
+  CollectionPreviewItemImage,
+  CollectionPreviewItemInfo,
+} from "./CollectionPreviewItem.style";
 
 // ------- Redux
 import { useDispatch } from "react-redux";
@@ -20,9 +20,8 @@ import {
   removeFromFavorites,
 } from "../../app/features/favorites/favoritesSlice";
 
-const ProductCard = (product) => {
-  const { id, imageUrl, productName, price, isFavorite } = product;
-
+const CollectionPreviewItem = ({ item }) => {
+  const { id, imageUrl, isFavorite, price, productName } = item;
   const dispatch = useDispatch();
 
   const addProductToFavorites = () => {
@@ -35,13 +34,12 @@ const ProductCard = (product) => {
     };
     dispatch(addToFavorites(productToAdd));
   };
-
   const removeProductFromFavorites = () => dispatch(removeFromFavorites(id));
 
   return (
-    <ProductCardWrapper>
-      <ProductCardContainer>
-        <ProductCardImage src={imageUrl} alt={productName} />
+    <CollectionPreviewItemWrapper>
+      <CollectionPreviewItemContainer>
+        <CollectionPreviewItemImage src={imageUrl} alt={productName} />
         {!isFavorite ? (
           <Icon onClick={addProductToFavorites}>
             <FavoritesIcon />
@@ -51,14 +49,14 @@ const ProductCard = (product) => {
             <RemoveFavoriteIcon />
           </Icon>
         )}
-        <AddToCartButton {...product} />
-      </ProductCardContainer>
-      <ProductCardInfo>
+        <AddToCartButton />
+      </CollectionPreviewItemContainer>
+      <CollectionPreviewItemInfo>
         <h4>{productName}</h4>
         <h4>{price}$</h4>
-      </ProductCardInfo>
-    </ProductCardWrapper>
+      </CollectionPreviewItemInfo>
+    </CollectionPreviewItemWrapper>
   );
 };
 
-export default ProductCard;
+export default CollectionPreviewItem;

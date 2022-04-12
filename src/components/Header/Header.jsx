@@ -58,10 +58,10 @@ const Header = () => {
 
           <HeaderNavigationIcons>
             <HeaderNavigationIcon>
-              <Link to='/favorites'>
+              <StyledLink to='/favorites'>
                 <HeartIcon />
                 <span>{favorites.length}</span>
-              </Link>
+              </StyledLink>
             </HeaderNavigationIcon>
 
             <HeaderNavigationIcon>

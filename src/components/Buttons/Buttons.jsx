@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // ------ Styles
 import { AddToCartBtn, CheckoutBtn } from "./Buttons.style";
 
-export const AddToCartButton = (product) => {
+export const AddToCartButton = () => {
   return <AddToCartBtn>Add To Cart</AddToCartBtn>;
 };
 

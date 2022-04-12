@@ -1,8 +1,8 @@
 import React from "react";
-import CollectionsContainer from "../../components/Collections/CollectionsContainer";
+import Collections from "../../components/Collections/Collections";
 
 const HomePage = () => {
-  return <CollectionsContainer />;
+  return <Collections />;
 };
 
 export default HomePage;
