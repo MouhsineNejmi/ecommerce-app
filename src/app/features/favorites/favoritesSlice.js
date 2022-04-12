@@ -8,18 +8,12 @@ const favoritesSlice = createSlice({
   reducers: {
     addToFavorites: (state, action) => {
       return [
-        ...state.filter(
-          (product) => product.productName !== action.payload.productName,
-        ),
+        ...state.filter((product) => product.id !== action.payload.id),
         action.payload,
       ];
     },
     removeFromFavorites: (state, action) => {
-      return [
-        ...state.filter(
-          (product) => product.productName !== action.payload.productName,
-        ),
-      ];
+      return [...state.filter((product) => product.id !== action.payload)];
     },
   },
 });

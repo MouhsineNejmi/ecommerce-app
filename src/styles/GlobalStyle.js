@@ -13,6 +13,10 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     font-family: 'Roboto Condensed', sans-serif;
     transition: background-color .4s ease-in;
+
+    @media screen and (max-width: 1024px) {
+      padding: 20px 30px;
+    }
   }
 
   a {

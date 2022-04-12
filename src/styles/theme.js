@@ -7,6 +7,11 @@ export const lightTheme = {
   gray: "rgba(0,0,0,.7)",
   lightGray: "rgba(0,0,0,.5)",
   title: "#3a3a3a",
+  border: "#000",
+  btnBackground: "#000",
+  btnBackgroundReverse: "#fff",
+  btnTitle: "#fff",
+  btnTitleReverse: "#000",
 };
 
 export const darkTheme = {
@@ -18,4 +23,9 @@ export const darkTheme = {
   gray: "#fff",
   lightGray: "rgba(0,0,0,.5)",
   title: "#fff",
+  border: "#fff",
+  btnBackground: "#fff",
+  btnBackgroundReverse: "#000",
+  btnTitle: "#000",
+  btnTitleReverse: "#fff",
 };

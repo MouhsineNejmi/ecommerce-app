@@ -27,7 +27,7 @@ const FavoritePage = () => {
 
             return (
               <ProductCard
-                key={productName}
+                key={id}
                 id={id}
                 imageUrl={imageUrl}
                 productName={productName}

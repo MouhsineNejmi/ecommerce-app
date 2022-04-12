@@ -2,7 +2,7 @@ import React from "react";
 
 // ------- Components
 import { FavoritesIcon, RemoveFavoriteIcon } from "../Icons/Icons";
-import AddToCartButton from "../AddToCartButton/AddToCartButton";
+import { AddToCartButton } from "../Buttons/Buttons";
 
 // ------- Styles
 import {
@@ -20,30 +20,23 @@ import {
   removeFromFavorites,
 } from "../../app/features/favorites/favoritesSlice";
 
-const ProductCard = ({ id, imageUrl, productName, price, isFavorite }) => {
+const ProductCard = (product) => {
+  const { id, imageUrl, productName, price, isFavorite } = product;
+
   const dispatch = useDispatch();
 
   const addProductToFavorites = () => {
-    const product = {
+    const productToAdd = {
       id,
       imageUrl,
       productName,
       price,
       isFavorite: !isFavorite,
     };
-    dispatch(addToFavorites(product));
+    dispatch(addToFavorites(productToAdd));
   };
 
-  const removeProductFromFavorites = () => {
-    const product = {
-      id,
-      imageUrl,
-      productName,
-      price,
-      isFavorite: !isFavorite,
-    };
-    dispatch(removeFromFavorites(product));
-  };
+  const removeProductFromFavorites = () => dispatch(removeFromFavorites(id));
 
   return (
     <ProductCardWrapper>
@@ -58,7 +51,7 @@ const ProductCard = ({ id, imageUrl, productName, price, isFavorite }) => {
             <RemoveFavoriteIcon />
           </Icon>
         )}
-        <AddToCartButton />
+        <AddToCartButton {...product} />
       </ProductCardContainer>
       <ProductCardInfo>
         <h4>{productName}</h4>

@@ -1,12 +1,33 @@
 import { configureStore } from "@reduxjs/toolkit";
-import productsReducer from "./features/products/productsSlice";
-import collectionsReducer from "./features/collections/collectionsSlice";
-import favoritesReducer from "./features/favorites/favoritesSlice";
+// ------- Reducer
+import rootReducer from "./reducers";
+
+// ------- Redux Persist
+import {
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
+import storage from "redux-persist/lib/storage";
+
+const persistConfig = {
+  key: "root",
+  version: 1,
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: {
-    products: productsReducer,
-    collections: collectionsReducer,
-    favorites: favoritesReducer,
-  },
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });

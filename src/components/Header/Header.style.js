@@ -1,5 +1,5 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const HeaderContainer = styled.header`
   width: 100%;
@@ -23,6 +23,10 @@ export const HeaderNavigation = styled.nav`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const HeaderNavigationList = styled.ul`
@@ -38,15 +42,22 @@ export const HeaderNavigationElement = styled.li`
   color: ${({ theme }) => theme.gray};
 `;
 
+export const StyledLink = styled(NavLink)`
+  &.active {
+    text-decoration: underline;
+  }
+`;
+
 export const HeaderNavigationIcons = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   align-items: center;
   height: 70px;
+  position: relative;
 `;
 
-export const HeaderNavigationIcon = styled(Link)`
+export const HeaderNavigationIcon = styled.div`
   position: relative;
   width: 50px;
   height: 100%;
@@ -80,5 +91,37 @@ export const HeaderNavigationIcon = styled(Link)`
     position: absolute;
     bottom: 21px;
     right: 7px;
+  }
+`;
+
+export const HeaderNavigationResponsive = styled.div`
+  & svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const HeaderResponsive = styled.ul`
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid ${({ theme }) => theme.border};
+
+  & li {
+    margin-bottom: 20px;
+
+    &:first-child {
+      margin-top: 20px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
   }
 `;

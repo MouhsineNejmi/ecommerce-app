@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 export const CollectionsWrapper = styled.section`
-  height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 240px 380px;
   grid-gap: 15px;
-  padding-bottom: 60px;
+  margin-bottom: 30px;
   overflow: hidden;
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 240px);
+    overflow: visible;
+  }
 `;
 
 export const CollectionWrapper = styled.div`
@@ -44,6 +49,10 @@ export const CollectionInfo = styled.div`
   z-index: 1;
   cursor: pointer;
   transition: all 0.3s;
+
+  @media screen and (max-width: 520px) {
+    width: 60%;
+  }
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.9);
