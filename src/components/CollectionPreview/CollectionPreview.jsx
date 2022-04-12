@@ -7,14 +7,20 @@ import {
   CollectionPreviewContainer,
 } from "./CollectionPreview.style";
 
-const CollectionPreview = ({ id, collectionName, items }) => {
+const CollectionPreview = ({ id, collectionName, items, slice }) => {
   return (
     <CollectionPreviewWrapper>
-      <Title>{collectionName}</Title>
+      {slice && <Title>{collectionName}</Title>}
       <CollectionPreviewContainer>
-        {items.slice(0, 4).map((item) => (
-          <CollectionPreviewItem key={item.id} item={item} />
-        ))}
+        {slice
+          ? items
+              .slice(0, 4)
+              .map((item) => (
+                <CollectionPreviewItem key={item.id} item={item} />
+              ))
+          : items.map((item) => (
+              <CollectionPreviewItem key={item.id} item={item} />
+            ))}
       </CollectionPreviewContainer>
     </CollectionPreviewWrapper>
   );

@@ -17,7 +17,7 @@ const Collections = () => {
   return (
     <CollectionsWrapper>
       {collections.map(({ id, image, name }) => (
-        <CollectionWrapper key={id} onClick={pushRoute}>
+        <CollectionWrapper key={id} onClick={() => pushRoute(name)}>
           <CollectionBackground image={image}></CollectionBackground>
           <CollectionInfo>
             <h3>{name} collection</h3>

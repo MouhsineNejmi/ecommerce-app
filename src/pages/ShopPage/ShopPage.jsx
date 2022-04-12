@@ -20,6 +20,7 @@ const ShopPage = () => {
               id={id}
               collectionName={collection}
               items={items}
+              slice={true}
             />
           );
         }),
