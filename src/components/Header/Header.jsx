@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-// ------- Data
-import { navigationList, navigationListResponsive } from "./headerData";
-
 // ------- Components
 import { HeartIcon, ShoppingCartIcon } from "../Icons/Icons";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
+import CartModal from "../CartModal/CartModal";
 
 // ------- Styles
 import {
@@ -24,15 +22,26 @@ import {
 } from "./Header.style";
 
 // ------- Redux
-import { useSelector } from "react-redux";
-import CartModal from "../CartModal/CartModal";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsLoggedIn } from "../../app/user/userSlice";
+
+// ------- Firebase
+import { signOutUser } from "../../firebase/firebase.utils";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
   const favorites = useSelector((state) => state.favorites);
   const cart = useSelector((state) => state.cart);
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((state) => !state);
+  const signOut = () => {
+    dispatch(setIsLoggedIn(false));
+    signOutUser();
+  };
 
   return (
     <>
@@ -43,17 +52,29 @@ const Header = () => {
 
         <HeaderNavigation>
           <HeaderNavigationList>
-            {navigationList.map((nav) => {
-              const { name, link } = nav;
+            <HeaderNavigationElement>
+              <StyledLink to='/shop' exact='true'>
+                Shopping
+              </StyledLink>
+            </HeaderNavigationElement>
 
-              return (
-                <HeaderNavigationElement key={name}>
-                  <StyledLink to={link} exact='true'>
-                    {name}
-                  </StyledLink>
-                </HeaderNavigationElement>
-              );
-            })}
+            <HeaderNavigationElement>
+              <StyledLink to='/contacts' exact='true'>
+                Contacts
+              </StyledLink>
+            </HeaderNavigationElement>
+
+            <HeaderNavigationElement>
+              {isLoggedIn ? (
+                <StyledLink as='span' onClick={signOut}>
+                  Sign Out
+                </StyledLink>
+              ) : (
+                <StyledLink to='/sign-in-and-sign-up' exact='true'>
+                  Sign In
+                </StyledLink>
+              )}
+            </HeaderNavigationElement>
           </HeaderNavigationList>
 
           <HeaderNavigationIcons>
@@ -79,15 +100,35 @@ const Header = () => {
 
       {isOpen && (
         <HeaderResponsive>
-          {navigationListResponsive.map((nav) => {
-            const { name, link } = nav;
+          <HeaderNavigationElement>
+            <Link to='/shop'>Shopping</Link>
+          </HeaderNavigationElement>
 
-            return (
-              <HeaderNavigationElement key={name}>
-                <Link to={link}>{name}</Link>
-              </HeaderNavigationElement>
-            );
-          })}
+          <HeaderNavigationElement>
+            <Link to='/contacts'>Contacts</Link>
+          </HeaderNavigationElement>
+
+          <HeaderNavigationElement>
+            <Link to='/favorites'>Favorites</Link>
+          </HeaderNavigationElement>
+
+          {isLoggedIn ? (
+            <HeaderNavigationElement>
+              <StyledLink as='div' onClick={signOutUser}>
+                Sign Out
+              </StyledLink>
+            </HeaderNavigationElement>
+          ) : (
+            <HeaderNavigationElement>
+              <StyledLink to='/sign-in-and-sign-up' exact='true'>
+                Sign In
+              </StyledLink>
+            </HeaderNavigationElement>
+          )}
+
+          <HeaderNavigationElement>
+            <Link to='/checkout'>Go to Checkout</Link>
+          </HeaderNavigationElement>
         </HeaderResponsive>
       )}
     </>

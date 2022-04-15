@@ -40,6 +40,10 @@ export const HeaderNavigationElement = styled.li`
   font-size: 16px;
   font-weight: 300;
   color: ${({ theme }) => theme.gray};
+
+  & span {
+    cursor: pointer;
+  }
 `;
 
 export const StyledLink = styled(NavLink)`

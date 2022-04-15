@@ -15,6 +15,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import ShopPage from "./pages/ShopPage/ShopPage";
 import CollectionPage from "./pages/CollectionPage/CollectionPage";
 import FavoritePage from "./pages/Favorite/FavoritePage";
+import SignInAndSignUpPage from "./pages/SignInAndSignUpPage/SignInAndSignUpPage";
 
 const App = () => {
   const [theme, themeToggler] = useDarkMode();
@@ -32,6 +33,7 @@ const App = () => {
         <Route path='shop' element={<ShopPage />} />
         <Route path='/shop/:shopCollection' element={<CollectionPage />} />
         <Route path='/favorites' element={<FavoritePage />} />
+        <Route path='/sign-in-and-sign-up' element={<SignInAndSignUpPage />} />
       </Routes>
 
       <Outlet />

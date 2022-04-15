@@ -12,6 +12,9 @@ export const lightTheme = {
   btnBackgroundReverse: "#fff",
   btnTitle: "#fff",
   btnTitleReverse: "#000",
+  googleBtn: "rgb(66, 133, 244)",
+  googleBtnHover: "rgb(53, 122, 232)",
+  googleBtnTitle: "#fff",
 };
 
 export const darkTheme = {
@@ -28,4 +31,7 @@ export const darkTheme = {
   btnBackgroundReverse: "#000",
   btnTitle: "#000",
   btnTitleReverse: "#fff",
+  googleBtn: "rgb(66, 133, 244)",
+  googleBtnHover: "rgb(53, 122, 232)",
+  googleBtnTitle: "#fff",
 };

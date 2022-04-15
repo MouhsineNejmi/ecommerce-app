@@ -18,7 +18,7 @@ import { useDispatch } from "react-redux";
 import {
   addToFavorites,
   removeFromFavorites,
-} from "../../app/features/favorites/favoritesSlice";
+} from "../../app/favorites/favoritesSlice";
 
 const CollectionPreviewItem = ({ item }) => {
   const { id, imageUrl, isFavorite, price, productName } = item;

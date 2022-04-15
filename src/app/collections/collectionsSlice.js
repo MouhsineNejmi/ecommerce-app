@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { collections } from "../../../data/collections";
+import { collections } from "../../data/collections";
 
 const initialState = [];
 
