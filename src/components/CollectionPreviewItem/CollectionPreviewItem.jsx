@@ -19,22 +19,20 @@ import {
   addToFavorites,
   removeFromFavorites,
 } from "../../app/favorites/favoritesSlice";
+import { addToCart } from "../../app/cart/cartSlice";
 
 const CollectionPreviewItem = ({ item }) => {
   const { id, imageUrl, isFavorite, price, productName } = item;
   const dispatch = useDispatch();
 
-  const addProductToFavorites = () => {
-    const productToAdd = {
-      id,
-      imageUrl,
-      productName,
-      price,
-      isFavorite: !isFavorite,
-    };
-    dispatch(addToFavorites(productToAdd));
-  };
+  const addProductToFavorites = () =>
+    dispatch(addToFavorites({ ...item, isFavorite: !isFavorite }));
+
   const removeProductFromFavorites = () => dispatch(removeFromFavorites(id));
+
+  const addItemToCart = () => {
+    dispatch(addToCart(item));
+  };
 
   return (
     <CollectionPreviewItemWrapper>
@@ -49,7 +47,9 @@ const CollectionPreviewItem = ({ item }) => {
             <RemoveFavoriteIcon />
           </Icon>
         )}
-        <AddToCartButton />
+        <div onClick={addItemToCart}>
+          <AddToCartButton />
+        </div>
       </CollectionPreviewItemContainer>
       <CollectionPreviewItemInfo>
         <h4>{productName}</h4>

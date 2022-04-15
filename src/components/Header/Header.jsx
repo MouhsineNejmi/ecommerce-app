@@ -24,6 +24,7 @@ import {
 // ------- Redux
 import { useDispatch, useSelector } from "react-redux";
 import { setIsLoggedIn } from "../../app/user/userSlice";
+import { cartItemsLength } from "../../app/cart/cartSlice";
 
 // ------- Firebase
 import { signOutUser } from "../../firebase/firebase.utils";
@@ -32,12 +33,15 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const favorites = useSelector((state) => state.favorites);
-  const cart = useSelector((state) => state.cart);
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const cartProducts = useSelector((state) => state.cart.cartItems);
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
-  const toggleMenu = () => setIsOpen((state) => !state);
+  const toggleMenu = () => setOpenMenu((state) => !state);
+  const toggleModal = () => setOpenModal((state) => !state);
+
   const signOut = () => {
     dispatch(setIsLoggedIn(false));
     signOutUser();
@@ -85,20 +89,20 @@ const Header = () => {
               </StyledLink>
             </HeaderNavigationIcon>
 
-            <HeaderNavigationIcon>
+            <HeaderNavigationIcon onClick={toggleModal}>
               <ShoppingCartIcon />
-              <span>{cart.length}</span>
-              <CartModal />
+              <span>{cartProducts ? cartProducts.length : 0}</span>
+              {openModal && <CartModal openModal={openModal} />}
             </HeaderNavigationIcon>
           </HeaderNavigationIcons>
         </HeaderNavigation>
 
         <HeaderNavigationResponsive onClick={toggleMenu}>
-          {isOpen ? <IoMdClose /> : <HiMenuAlt2 />}
+          {openMenu ? <IoMdClose /> : <HiMenuAlt2 />}
         </HeaderNavigationResponsive>
       </HeaderContainer>
 
-      {isOpen && (
+      {openMenu && (
         <HeaderResponsive>
           <HeaderNavigationElement>
             <Link to='/shop'>Shopping</Link>

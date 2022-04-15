@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CartModalWrapper = styled.div`
-  display: none;
+  display: ${({ openModal }) => (openModal ? "flex" : "none")};
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
@@ -12,7 +12,7 @@ export const CartModalWrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.border};
   background-color: ${({ theme }) => theme.body};
   padding: 20px;
-  overflow-y: hidden;
+  overflow: scroll;
   z-index: 99;
 `;
 

@@ -1,7 +1,23 @@
 import React from "react";
 
-const CartProduct = () => {
-  return <div>Product Name 1</div>;
+import {
+  CartItemContainer,
+  CartItemImage,
+  ItemDetailsContainer,
+} from "./CartProduct.style";
+
+const CartProduct = ({ imageUrl, productName, price, quantity }) => {
+  return (
+    <CartItemContainer>
+      <CartItemImage src={imageUrl} alt={productName} />
+      <ItemDetailsContainer>
+        <p>{productName}</p>
+        <p>
+          {quantity} x ${price}
+        </p>
+      </ItemDetailsContainer>
+    </CartItemContainer>
+  );
 };
 
-export default CartProduct;
+export default React.memo(CartProduct);
