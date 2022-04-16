@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+![e-commerce web app screenshot](/src/assets/screens/desktop-mobile-screen.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### **My ecommerce app is a fully responsive website created with React, Redux, and Firebase.**
 
-## Available Scripts
+<br />
 
-In the project directory, you can run:
+---
 
-### `npm start`
+<br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **App Stack:**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br />
+<br />
 
-### `npm test`
+**React & Redux:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use Redux for state management.
 
-### `npm run build`
+Create reusable components with Styled-Components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Navigate between pages with React-Router (v6)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Redux Persist to keep data persisted when refreshing the page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br />
 
-### `npm run eject`
+**Firebase & Firestore:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Sign-In and Sign-Up workflow with Firebase.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Google Sign-In** authentication.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Storing User Data in Firestore.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<br />
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **Complete MVP:**
 
-### Code Splitting
+![Complete MVP 1](/src/assets/screens/category-desktop-mobile-screen.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Complete MVP 2](/src/assets/screens/shop-page-screen.png)
 
-### Analyzing the Bundle Size
+![Complete MVP 3](/src/assets/screens/sign-in-screen.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Complete MVP 4](/src/assets/screens/checkout-screen.png)
 
-### Making a Progressive Web App
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### **Overview & Goals:**
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+MVP of an ecommerce store.
 
-### Deployment
+Display different collections and their related products.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<br />
 
-### `npm run build` fails to minify
+**Feature 1 - Add To Favorites:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+User is able to add items to favorites.
+
+Delete items to favorites.
+
+![Add To Favorites](/src/assets/screens/favorites-screen.png)
+
+---
+
+<br />
+
+**Feature 2 - Add To Cart:**
+
+Ability to Add Items To Cart.
+
+Change Item's Quantity.
+
+Delete Item's from Cart.
+
+![Add To Cart](/src/assets/screens/night-mode-screen.png)
+
+---
+
+<br />
+
+**Feature 3 - Stripe Integration Payment.**
+
+Handling online payments with Credits Card using Stripe API.
+
+![Stripe Payment 1](/src/assets/screens/stripe-api-screen-1.png)
+
+![Stripe Payment Success](/src/assets/screens/stripe-api-screen-success.png)
+
+<br />
+
+---
+
+<br />
+
+**Feature 4 - Switch Light/Night Modes.**
+
+Switch between Light and Night Modes.
+
+![Night Mode](/src/assets/screens/night-mode-screen.png)
+![Light Mode](/src/assets/screens/light-mode-screen.png)
+
+**Feature 5 - Login & Logout.**
+
+![Login](/src/assets/screens/login-screen.png)
+
+![Logged](/src/assets/screens/logged-in-screen.png)

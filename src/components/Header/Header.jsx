@@ -24,7 +24,6 @@ import {
 // ------- Redux
 import { useDispatch, useSelector } from "react-redux";
 import { setIsLoggedIn } from "../../app/user/userSlice";
-import { cartItemsLength } from "../../app/cart/cartSlice";
 
 // ------- Firebase
 import { signOutUser } from "../../firebase/firebase.utils";
