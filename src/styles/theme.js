@@ -15,6 +15,7 @@ export const lightTheme = {
   googleBtn: "rgb(66, 133, 244)",
   googleBtnHover: "rgb(53, 122, 232)",
   googleBtnTitle: "#fff",
+  redColor: "#ff0000",
 };
 
 export const darkTheme = {
@@ -34,4 +35,5 @@ export const darkTheme = {
   googleBtn: "rgb(66, 133, 244)",
   googleBtnHover: "rgb(53, 122, 232)",
   googleBtnTitle: "#fff",
+  redColor: "#ff0000",
 };

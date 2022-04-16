@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const CheckoutPageContainer = styled.div`
   width: 55%;
@@ -26,21 +27,51 @@ export const CheckoutHeaderContainer = styled.div`
 
 export const HeaderBlockContainer = styled.div`
   text-transform: capitalize;
-  /* width: 23%;
-  &:last-child {
-    width: 8%;
-  } */
-  /* 
-  @media (max-width: 800px) {
-    width: 22%;
-    &:last-child {
-      width: 12%;
-    }
-  } */
 `;
 
 export const TotalContainer = styled.div`
   margin-top: 30px;
   margin-left: auto;
   font-size: 36px;
+`;
+
+export const CheckoutFooterContainer = styled.div`
+  padding: 10px;
+`;
+
+export const CheckoutFooterBlockContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+`;
+
+export const CheckoutFooterButtonContainer = styled.div`
+  margin: 15px 0;
+
+  button {
+    font-weight: 400;
+    text-transform: uppercase;
+    background-color: #fd5d5d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 15px;
+    margin-top: 0;
+  }
+`;
+
+export const CheckoutFooterLink = styled(Link)`
+  span {
+    margin-top: -10px;
+    margin-left: 5px;
+  }
+`;
+
+export const CheckoutMessageBlockContainer = styled.div`
+  color: ${({ theme }) => theme.redColor};
+  text-align: center;
+  p {
+    margin: 10px 0;
+  }
 `;
